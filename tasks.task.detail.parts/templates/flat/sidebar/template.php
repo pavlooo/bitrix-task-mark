@@ -140,7 +140,7 @@ $stages = isset($arParams['TEMPLATE_DATA']['DATA']['STAGES']) ? $arParams['TEMPL
         <div class="task-detail-sidebar-item task-detail-sidebar-item-mark">
             <div class="task-detail-sidebar-item-title"><?=Loc::getMessage("TASKS_MARK_CUSTOM")?>:</div>
             <div  class="task-detail-sidebar-item-value<? if (!$can["EDIT"]):?> task-detail-sidebar-item-readonly<?endif?>"><?
-                ?><span onclick="openGrageMarkWindow(<?=$taskData["ID"]?>);" class="<?=$arResult['customMarkclassName'];?> task-detail-sidebar-item-mark-<?=strtolower($taskData["MARK"])?>" id="task-detail-mark-show"><?
+                ?><span <? if ($can["EDIT"]):?>onclick="openGrageMarkWindow(<?=$taskData["ID"]?>);"<?endif?> class="<?=$arResult['customMarkclassName'];?> task-detail-sidebar-item-mark-<?=strtolower($taskData["MARK"])?>" id="task-detail-mark-show"><?
                     if ($arResult['customMarkLinkName'])
                     {
                         echo $arResult['customMarkLinkName'];
